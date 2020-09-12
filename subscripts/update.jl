@@ -7,7 +7,7 @@ function apmu()
 end
 
 function pkg()
-	include(configDir("pkg.jl"))
+	include(configDir("imports/pkg.jl"))
 end
 
 function update()

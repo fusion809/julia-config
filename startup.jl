@@ -21,14 +21,14 @@ function inclCfgSc(filename::String)
 	include(configDir(filename));
 end
 
-inclCfgSc("config.jl")
-inclCfgSc("git.jl")
-inclCfgSc("FunctionIntegrator.jl")
-inclCfgSc("editors.jl")
-inclCfgSc("github.jl")
-inclCfgSc("julia-scripts.jl")
-inclCfgSc("FGI.jl")
-inclCfgSc("update.jl")
+inclCfgSc("subscripts/config.jl")
+inclCfgSc("subscripts/git.jl")
+inclCfgSc("subscripts/FunctionIntegrator.jl")
+inclCfgSc("subscripts/editors.jl")
+inclCfgSc("subscripts/github.jl")
+inclCfgSc("subscripts/julia-scripts.jl")
+inclCfgSc("subscripts/FGI.jl")
+inclCfgSc("subscripts/update.jl")
 
 # Import OR modules
 function operats()
