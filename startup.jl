@@ -20,7 +20,7 @@ end
 function push(msg::String)
 	run(`git add --all`);
 	run(`git commit -m "$msg"`);
-	branch = read(`git rev-parse --abbrev-ref HEAD`);
+	branch = chomp(read(`git rev-parse --abbrev-ref HEAD`, String));
 	run(`git push origin $branch`)
 end
 
