@@ -87,6 +87,9 @@ function fgiDir(path="")
 end
 
 function frank()
+	# Import Franklin module; not possible to import it directly see 
+	# https://discourse.julialang.org/t/why-wont-julia-let-me-put-a-module-import-within-a-function/46504/3
+	# for why
 	include(configDir("franklin-import.jl"))
 	serve()
 end
