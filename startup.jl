@@ -21,6 +21,7 @@ function inclCfgSc(filename::String)
 	include(configDir(filename));
 end
 
+# Import additional functions from separate scripts in subscripts/
 inclCfgSc("subscripts/config.jl")
 inclCfgSc("subscripts/git.jl")
 inclCfgSc("subscripts/FunctionIntegrator.jl")
@@ -29,23 +30,4 @@ inclCfgSc("subscripts/github.jl")
 inclCfgSc("subscripts/julia-scripts.jl")
 inclCfgSc("subscripts/FGI.jl")
 inclCfgSc("subscripts/update.jl")
-
-# Import OR modules
-function operats()
-	include(configDir("imports/operations.jl"))
-end
-
-"""
-	jupyterlab(path::String=julDir())
-
-Changes directory to path and starts Jupyter Lab.
-"""
-function jupyterlab(path::String=julDir())
-	cd(path)
-	run(`jupyter lab`)
-end
-
-# Unix shell mimicry
-function ls(path::String=pwd())
-	readdir(path)
-end
+inclCfgSc("subscripts/miscellaneous.jl")
