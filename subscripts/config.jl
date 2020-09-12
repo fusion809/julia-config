@@ -18,6 +18,10 @@ function vrc()
 	src()
 end
 
+function vcf(path::String="")
+	vim(configDir(path))
+end
+
 function crc()
 	code(pathrc())
 	src()
