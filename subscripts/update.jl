@@ -6,13 +6,17 @@ function apmu()
 	run(`apm update --confirm=false`)
 end
 
-function pkg()
-	include(configDir("imports/pkg.jl"))
+macro pkg()
+    quote
+        using Pkg
+    end
 end
 
-function update()
-	yay("-Syu")
-	apmu()
-	pkg()
-	Pkg.update()
+macro update()
+	quote
+		yay("-Syu --noconfirm")
+		apmu()
+		@pkg()
+		Pkg.update()
+	end
 end

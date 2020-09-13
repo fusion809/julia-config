@@ -1,6 +1,8 @@
 # Import OR modules
-function operats()
-	include(configDir("imports/operations.jl"))
+macro operats()
+    quote
+        using GLPK, Clp, JuMP, Hungarian
+    end
 end
 
 """

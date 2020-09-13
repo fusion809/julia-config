@@ -3,17 +3,25 @@ function fgiDir(path::String="")
 	return gitDir("mine/websites/fusion809.github.io/$path")
 end
 
+macro frankimport()
+ 	quote
+ 		using Franklin
+ 	end
+end
+
 """
 	frank()
 
 Launches Franklin, after first importing its module.
 """
-function frank()
-	# Import Franklin module; not possible to import it directly see 
-	# https://discourse.julialang.org/t/why-wont-julia-let-me-put-a-module-import-within-a-function/46504/3
-	# for why
-	include(configDir("imports/franklin-import.jl"))
-	serve()
+macro frank()
+	quote
+		# Import Franklin module; not possible to import it directly see 
+		# https://discourse.julialang.org/t/why-wont-julia-let-me-put-a-module-import-within-a-function/46504/3
+		# for why
+		@frankimport()
+		serve()
+	end
 end
 
 """
