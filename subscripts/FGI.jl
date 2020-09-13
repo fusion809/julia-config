@@ -10,11 +10,11 @@ macro frankimport()
 end
 
 """
-	frank()
+	franklin()
 
 Launches Franklin, after first importing its module.
 """
-macro frank()
+macro franklin()
 	quote
 		# Import Franklin module; not possible to import it directly see 
 		# https://discourse.julialang.org/t/why-wont-julia-let-me-put-a-module-import-within-a-function/46504/3
@@ -38,7 +38,9 @@ function vfgi(path::String="")
 	vim(webDir)
 end
 
-function fgiServ()
-	cd(fgiDir())
-	frank()
+macro fgiServ()
+	quote
+		cd(fgiDir())
+		@franklin()
+	end
 end
