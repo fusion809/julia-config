@@ -14,7 +14,8 @@ end
 
 macro update()
 	quote
-		yay("-Syu --noconfirm")
+		# Writing the following line in terms of the yay function fails
+		run(`yay -Syu --noconfirm`)
 		apmu()
 		@pkg()
 		Pkg.update()
