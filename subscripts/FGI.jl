@@ -12,13 +12,12 @@ end
 """
 	franklin()
 
-Launches Franklin, after first importing its module.
+Launches Franklin, after first importing its module. Cannot be defined as a function due to an issue mentioned at
+https://discourse.julialang.org/t/why-wont-julia-let-me-put-a-module-import-within-a-function/46504/3
 """
 macro franklin()
 	quote
-		# Import Franklin module; not possible to import it directly see 
-		# https://discourse.julialang.org/t/why-wont-julia-let-me-put-a-module-import-within-a-function/46504/3
-		# for why
+		# Import Franklin module
 		@frankImport()
 		serve()
 	end
