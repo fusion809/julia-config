@@ -13,21 +13,21 @@ function configDir(path::String="")
 end
 
 """
-	inclCfgSc(filename::String)
+	includeConfigScript(filename::String)
 
 Runs `include()` on a file within ~/.julia/config/ whose name is specified by the argument `filename`.
 """
-function inclCfgSc(filename::String)
-	include(configDir(filename));
+function includeConfigScript(filename::String)
+	include(configDir(string("subscripts/", filename)));
 end
 
 # Import additional functions from separate scripts in subscripts/
-inclCfgSc("subscripts/config.jl")
-inclCfgSc("subscripts/git.jl")
-inclCfgSc("subscripts/FunctionIntegrator.jl")
-inclCfgSc("subscripts/editors.jl")
-inclCfgSc("subscripts/github.jl")
-inclCfgSc("subscripts/julia-scripts.jl")
-inclCfgSc("subscripts/FGI.jl")
-inclCfgSc("subscripts/update.jl")
-inclCfgSc("subscripts/miscellaneous.jl")
+includeConfigScript("config.jl")
+includeConfigScript("git.jl")
+includeConfigScript("FunctionIntegrator.jl")
+includeConfigScript("editors.jl")
+includeConfigScript("github.jl")
+includeConfigScript("julia-scripts.jl")
+includeConfigScript("FGI.jl")
+includeConfigScript("update.jl")
+includeConfigScript("miscellaneous.jl")
