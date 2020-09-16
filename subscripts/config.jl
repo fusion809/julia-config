@@ -18,8 +18,13 @@ function vrc()
 	src()
 end
 
-function vcf(path::String="")
-	vim(configDir(path))
+function grc()
+	gvim(pathrc())
+	src()
+end
+
+function arc()
+	atom(pathrc())
 end
 
 function crc()
@@ -27,6 +32,22 @@ function crc()
 	src()
 end
 
-function ccf()
-	code(configDir())
+function vcf(path::String="")
+	vim(configDir(path))
+	src()
+end
+
+function acf(path::String="")
+	atom(configDir(path))
+	src()
+end
+
+function gcf(path::String="")
+	gvim(configDir(path))
+	src()
+end
+
+function ccf(path::String="")
+	code(configDir(path))
+	src()
 end

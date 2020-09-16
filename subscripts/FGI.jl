@@ -38,6 +38,21 @@ function vfgi(path::String="")
 	vim(webDir)
 end
 
+function cfgi(path::String="")
+	webDir = fgiDir(path);
+	code(webDir)
+end
+
+function gvfgi(path::String="")
+	webDir = fgiDir(path);
+	gvim(webDir)
+end
+
+function afgi(path::String="")
+	webDir = fgiDir(path);
+	atom(webDir)
+end
+
 macro fgiServ()
 	quote
 		cd(fgiDir())

@@ -9,6 +9,11 @@ function vjus(path::String="")
 	vim(juliaDir)
 end
 
+function gjus(path::String="")
+	juliaDir = julDir(path);
+	gvim(juliaDir)
+end
+
 function ajus(path::String="")
 	juliaDir = julDir(path);
 	atom(julaDir)

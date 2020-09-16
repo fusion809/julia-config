@@ -16,6 +16,10 @@ function vint(path::String="")
 	vim(intDir(path))
 end
 
+function gint(path::String="")
+	gvim(intDir(path))
+end
+
 function cint(path::String="")
 	code(intDir(path))
 end

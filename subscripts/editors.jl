@@ -8,6 +8,10 @@ function vim(path::String=pwd())
 	run(`vim $path`)
 end
 
+function gvim(path::String=pwd())
+	run(`gvim $path`)
+end
+
 function atom(path::String=pwd())
 	run(`atom $path`)
 end
