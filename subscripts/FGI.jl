@@ -3,7 +3,7 @@ function fgiDir(path::String="")
 	return gitDir("mine/websites/fusion809.github.io/$path")
 end
 
-macro frankimport()
+macro frankImport()
  	quote
  		using Franklin
  	end
@@ -19,7 +19,7 @@ macro franklin()
 		# Import Franklin module; not possible to import it directly see 
 		# https://discourse.julialang.org/t/why-wont-julia-let-me-put-a-module-import-within-a-function/46504/3
 		# for why
-		@frankimport()
+		@frankImport()
 		serve()
 	end
 end
