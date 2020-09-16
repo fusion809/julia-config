@@ -39,15 +39,12 @@ end
 
 function acf(path::String="")
 	atom(configDir(path))
-	src()
 end
 
 function gcf(path::String="")
 	gvim(configDir(path))
-	src()
 end
 
 function ccf(path::String="")
 	code(configDir(path))
-	src()
 end
