@@ -31,3 +31,15 @@ includeConfigScript("julia-scripts.jl")
 includeConfigScript("FGI.jl")
 includeConfigScript("update.jl")
 includeConfigScript("miscellaneous.jl")
+
+atreplinit() do repl
+    try
+        @eval using OhMyREPL
+    catch e
+        @warn "error while importing OhMyREPL" e
+    end
+end
+
+colorscheme!("Monokai256")
+
+OhMyREPL.Passes.RainbowBrackets.activate_256colors()

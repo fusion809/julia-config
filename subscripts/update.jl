@@ -16,7 +16,9 @@ macro update()
 	quote
 		# Writing the following line in terms of the yay function fails
 		run(`yay -Syu --noconfirm`)
-		apmu()
+		if isfile("/usr/bin/apm")
+			apmu()
+		end
 		@pkg()
 		Pkg.update()
 	end
